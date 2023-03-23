@@ -1,6 +1,11 @@
 local RitnProtoTech = require(ritnlib.defines.class.prototype.tech)
 ------------------------------------------------------
 local difficulty = settings.startup["ritnmods-nlc-01"].value
+local level = {
+    normal = 1,
+    hardcore = 2,
+    ["ultra-hardcore"] = 3,
+}
 ------------------------------------------------------
 
 -- recipe remove
@@ -29,23 +34,17 @@ RitnProtoTech("belt-immunity-equipment"):disable(true)
 
 
 
-if difficulty == "hardcore" then 
-
+if level[difficulty] > 1 then 
     --recipe remove
     RitnProtoTech("fluid-handling"):removeRecipe("storage-tank")
     RitnProtoTech("fluid-handling"):removeRecipe("pump")
     -- disable technologies
     RitnProtoTech("fluid-wagon"):disable(true) 
+end
 
-elseif difficulty == "ultra-hardcore" then 
+if level[difficulty] > 2 then 
 
-    --recipe remove
-    RitnProtoTech("fluid-handling"):removeRecipe("storage-tank")
-    RitnProtoTech("fluid-handling"):removeRecipe("pump")
-
-    -- disable technologies
-    RitnProtoTech("fluid-wagon"):disable(true) 
-    
+    -- disable technologies   
     RitnProtoTech("mining-productivity-1"):disable(true) 
     RitnProtoTech("mining-productivity-2"):disable(true) 
     RitnProtoTech("mining-productivity-3"):disable(true) 
@@ -57,5 +56,4 @@ elseif difficulty == "ultra-hardcore" then
     RitnProtoTech("kovarex-enrichment-process"):disable(true) 
     RitnProtoTech("nuclear-fuel-reprocessing"):disable(true) 
     RitnProtoTech("atomic-bomb"):disable(true) 
-
 end
