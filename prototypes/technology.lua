@@ -39,7 +39,7 @@ if level[difficulty] > 1 then
     RitnProtoTech("fluid-handling"):removeRecipe("storage-tank")
     RitnProtoTech("fluid-handling"):removeRecipe("pump")
     -- disable technologies
-    RitnProtoTech("fluid-wagon"):disable(true) 
+    RitnProtoTech("fluid-wagon"):disable(true)
 end
 
 if level[difficulty] > 2 then 

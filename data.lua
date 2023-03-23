@@ -23,7 +23,7 @@ require("prototypes/technology")
 if level[difficulty] > 1 then 
     RitnProtoItem("pipe"):changePrototype("place_result", nil)
     RitnProtoItem("pipe-to-ground"):changePrototype("place_result", nil)
-    RitnProtoItem("tank"):changePrototype("place_result", nil)
+    RitnProtoItem("storage-tank"):changePrototype("place_result", nil)
     RitnProtoItem("pump"):changePrototype("place_result", nil)
 end
 
